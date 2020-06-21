@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Predict Your chances for Admission</h1>
+    <div class = 'class="center-block"'>
+        
+        <div class ='form'>
+
+            <form action = '/prediction', method = 'POST'>
+                <input style="text-align: center" type = 'number' name = 'greScore' id ='greScore' placeholder="GRE Score (290 - 340)">
+                <input style="text-align: center" type = 'number' name = 'toeflScore' id ='toeflScore' placeholder="TOEFL Score (92 - 120)">
+                <input style="text-align: center" type = 'number' name = 'univRating' id ='univRating' placeholder="University Rating (1-5)">
+                <input style="text-align: center" type = 'number' name = 'sop' id ='sop' placeholder="SOP (1-5)">
+                <input style="text-align: center" type = 'number' name = 'lor' id ='lor' placeholder="LOR (1-5)">
+                <input style="text-align: center" type = 'number' name = 'cgpa' id ='cgpa' placeholder="CGPA (6 - 10)" step="any">       
+                <select style="text-align: center" name="research" id="research">
+                    <option value = 'yes'>Yes</option>
+                    <option value = 'no'>No</option>
+                </select>
+                <input type = 'submit' value = 'Predict'>
+            </form>
+
+        </div>
+           
+    </div>
+{% endblock %}
